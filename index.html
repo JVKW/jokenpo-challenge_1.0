@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpo - Pedra, Papel, Tesoura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Jokenpo</h1>
+    </header>
+
+    <div class="container">
+        <div id="form-div">
+            <form id="game-form">
+                <div class="form-group">
+                    <label for="playername-input">Digite o seu nome:</label>
+                    <input type="text" id="playername-input" placeholder="Seu Nome" maxlength="15">
+                    <p id="name-error-warning"></p>
+                </div>
+                <div class="form-group">
+                    <label for="rounds-input">Melhor de:</label>
+                    <input type="number" id="rounds-input" placeholder="Até 10 rodadas" maxlength="2">
+                    <p id="roundsnumber-error-warning"></p>
+                </div>
+                <button type="button" onclick="registerPlayer()">Entrar</button>
+            </form>
+        </div>
+
+        <div id="game-container">
+            <div id="point-dashboard">
+                <h4>&#x1F603; <span id="player-points">0</span> : <span id="computer-points">0</span> &#x1F916;</h4>
+            </div>
+
+            <div id="info-dashboard">
+                <p>
+                    Rodada Atual: <b><span id="atual-round-text-id">0</span></b>
+                </p>
+                <p>
+                    Rodada Máxima: <b><span id="max-round-choice-text-id">0</span></b>
+                </p>
+                <p>
+                    Tempo: <b><span id="timer-text-id">00:00</span></b>
+                </p>
+                <div id="his"></div>
+                <p>
+                    Histórico:
+                </p>
+            </div>
+
+            <h3 id="text-round-info">Bem-Vindo(a) ao jogo Pedra, Papel e Tesoura!</h3>
+
+            <div class="player" id="player1">
+                <h2>Computador &#x1F4BB;</h2>
+                <div class="bot-choice-area">
+                    <div class="choice-buttons bot-choices hidden-div">
+                        <button class="pedra-button" onclick="getPlayerChoice('pedra')"></button>
+                        <button class="papel-button" onclick="getPlayerChoice('papel')"></button>
+                        <button class="tesoura-button" onclick="getPlayerChoice('tesoura')"></button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="player" id="player2">
+                <h2 id="player-name">Você &#x1F60E;</h2>
+                <p>Faça sua escolha!</p>
+                <div class="choice-buttons">
+                    <button class="pedra-button player-button" onclick="getPlayerChoice('pedra')"></button>
+                    <button class="papel-button player-button" onclick="getPlayerChoice('papel')"></button>
+                    <button class="tesoura-button player-button" onclick="getPlayerChoice('tesoura')"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
